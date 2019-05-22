@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class StudentModel {
 
+	private int id;
 	private int rollNo;
 	private String name;
 	private String schoolName;

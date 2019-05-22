@@ -9,8 +9,9 @@ public class StudentToStudentEntityConverter {
 		/**
 		 * Case 1: using create object using all parameterized constructor.
 		 */
-//		StudentEntity studentEntity = new StudentEntity(studentModel.getRollNo(), studentModel.getName(),
-//				studentModel.getSchoolName(), studentModel.getFavoriteSubject());
+		// StudentEntity studentEntity = new
+		// StudentEntity(studentModel.getRollNo(), studentModel.getName(),
+		// studentModel.getSchoolName(), studentModel.getFavoriteSubject());
 
 		/**
 		 * Case 2: using create new blank object.
@@ -21,22 +22,23 @@ public class StudentToStudentEntityConverter {
 		/**
 		 * Case 3: using Builder Pattern
 		 */
-		 StudentEntity studentEntity = StudentEntity.builder()
-		 .name(studentModel.getName())
-		 .rollNo(studentModel.getRollNo())
-		 .schoolName(studentModel.getSchoolName())
-		 .favoriteSubject(studentModel.getFavoriteSubject())
-		 .build();
+		StudentEntity studentEntity = StudentEntity.builder()
+				.id(studentModel.getId())
+				.name(studentModel.getName())
+				.rollNo(studentModel.getRollNo())
+				.schoolName(studentModel.getSchoolName())
+				.favoriteSubject(studentModel.getFavoriteSubject())
+				.build();
 
 		return studentEntity;
 	}
-	
+
 	public static StudentModel convertEntityToModel(StudentEntity studentEntity) {
 		/**
 		 * Case 1: using create object using all parameterized constructor.
 		 */
-		StudentModel studentModel = new StudentModel(studentEntity.getRollNo(), studentEntity.getName(),
-				studentEntity.getSchoolName(), studentEntity.getFavoriteSubject());
+		StudentModel studentModel = new StudentModel(studentEntity.getId(), studentEntity.getRollNo(),
+				studentEntity.getName(), studentEntity.getSchoolName(), studentEntity.getFavoriteSubject());
 
 		/**
 		 * Case 2: using create new blank object.
